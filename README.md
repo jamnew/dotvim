@@ -1,17 +1,17 @@
 # dotvim
 
 ## Deploy
-git clone --recurse-submodules https://github.com/jamnew/dotvim.git .vim
+git clone --recurse-submodules https://github.com/jamnew/dotvim.git .vim  
 ln -s .vim/vimrc .vimrc
 
-*Arch*
+*Arch*  
 I think nothing.
 
-*Ubuntu*
+*Ubuntu*  
 sudo apt-get install fonts-powerline
 
-*Putty*
-http://pdalinis.blogspot.com/2013/08/putty-powerline.html
+*Putty*  
+http://pdalinis.blogspot.com/2013/08/putty-powerline.html  
 
 > PuTTY + powerline
 > Powerline is a really nice looking command prompt and vim status bar.  When working on my linux machine, it was very easy to install following the instructions.
