@@ -72,12 +72,15 @@ highlight Comment ctermfg=green
 " show invisible chars
 set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<,space:·
 
+" setup cursorline and cursorcolumn
+:hi CursorLine   cterm=NONE ctermbg=DarkGray guibg=DarkGray
+:hi CursorColumn cterm=NONE ctermbg=DarkGray guibg=DarkGray
+nnoremap <F4> :set cursorline! cursorcolumn!<CR>
+
 " setup toggles
 nnoremap <F2> :set number!<CR>
 nnoremap <F3> :set list!<CR>
-nnoremap <F4> :set cursorline!<CR>
 nnoremap <F5> :let &cc = &cc == '' ? '81' : ''<CR>
-nnoremap <F6> :set number!<CR>\|:set list!<CR>\|:set cursorline!<CR>:let &cc = &cc == '' ? '81' : ''<CR>
 
 " highlight trailing whitespace in red
 " have this highlighting not appear whilst you are typing in insert mode
