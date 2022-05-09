@@ -58,6 +58,11 @@ let g:airline_section_z = '%p%% %l:%c'
 " Tagbar (tag viewer)
 " git submodule add https://github.com/preservim/tagbar.git bundle/tagbar
 let g:tagbar_ctags_bin='/usr/local/bin/phpctags'
+let g:tagbar_width = max([80, winwidth(0) / 2])
+let g:tagbar_sort = 0 " Source file order
+let g:tagbar_compact = 1
+let g:tagbar_show_linenumbers = 1 " Absolute
+nmap <F8> :TagbarToggle<CR>
 
 " tagbar-phpctags
 " git submodule add https://github.com/vim-php/tagbar-phpctags.vim.git bundle/tagbar-phpctags.vim
