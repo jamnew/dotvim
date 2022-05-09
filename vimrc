@@ -48,6 +48,10 @@ let g:airline_section_z = '%p%% %l:%c'
 " Fetch (jump to point in file)
 " git submodule add git://github.com/kopischke/vim-fetch.git bundle/vim-fetch
 
+" Tagbar (tag viewer)
+" git submodule add https://github.com/preservim/tagbar.git bundle/tagbar
+nmap <F8> :TagbarToggle<CR>
+
 " %%% Personal config
 
 " file type plugin -- e.g. can add to ftplugin/php

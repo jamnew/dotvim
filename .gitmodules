@@ -13,3 +13,6 @@
 [submodule "bundle/vim-fetch"]
 	path = bundle/vim-fetch
 	url = https://github.com/kopischke/vim-fetch.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/preservim/tagbar.git
