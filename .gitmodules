@@ -19,3 +19,6 @@
 [submodule "bundle/tagbar-phpctags.vim"]
 	path = bundle/tagbar-phpctags.vim
 	url = https://github.com/vim-php/tagbar-phpctags.vim.git
+[submodule "bundle/vim-gutentags"]
+	path = bundle/vim-gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags.git

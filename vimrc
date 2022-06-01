@@ -46,19 +46,33 @@ let g:airline_symbols.colnr = ':' " Removed from section z
 let g:airline_section_z = '%p%% %l:%c'
 
 " Fetch (jump to point in file)
-" git submodule add git://github.com/kopischke/vim-fetch.git bundle/vim-fetch
+" git submodule add https://github.com/kopischke/vim-fetch.git bundle/vim-fetch
 
-" %%% PHP tags
+" %%$ Tags (mostly for PHP)
 
-" phpctags install (needed by both)
+" universal ctags install
+" git clone https://github.com/universal-ctags/ctags.git
+" cd ctags
+" ./autogen.sh (needs automake & pkg-config)
+" ./configure
+" make
+" make install
+
+" phpctags install
 " curl -Ss https://raw.githubusercontent.com/vim-php/phpctags/gh-pages/install/phpctags.phar > phpctags
 " chmod +x phpctags
 " sudo mv phpctags /usr/local/bin/
 
+" Gutentags (tags magic)
+" git submodule add https://github.com/ludovicchabant/vim-gutentags.git bundle/vim-gutentags
+let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.js']
+let g:gutentags_cache_dir = '~/.vim/gutentags'
+
 " Tagbar (tag viewer)
 " git submodule add https://github.com/preservim/tagbar.git bundle/tagbar
-let g:tagbar_ctags_bin='/usr/local/bin/phpctags'
-let g:tagbar_width = max([80, winwidth(0) / 2])
+" let g:tagbar_ctags_bin = '/usr/local/bin/phpctags'
+let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+let g:tagbar_width = max([80, winwidth(0) / 3])
 let g:tagbar_sort = 0 " Source file order
 let g:tagbar_compact = 1
 let g:tagbar_show_linenumbers = 1 " Absolute
@@ -66,7 +80,7 @@ nmap <F8> :TagbarToggle<CR>
 
 " tagbar-phpctags
 " git submodule add https://github.com/vim-php/tagbar-phpctags.vim.git bundle/tagbar-phpctags.vim
-let g:tagbar_phpctags_bin='/usr/local/bin/phpctags'
+let g:tagbar_phpctags_bin = '/usr/local/bin/phpctags'
 
 " %%% Personal config
 
@@ -127,3 +141,11 @@ endif
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=300
+
+" Search highlighting and increment
+set hlsearch
+set incsearch
+:hi clear Search
+:hi clear IncSearch
+:hi Search term=reverse ctermfg=0 ctermbg=3 guifg=Black guibg=goldenrod1
+:hi IncSearch term=reverse ctermfg=0 ctermbg=11 guifg=Black guibg=goldenrod4
