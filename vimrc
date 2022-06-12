@@ -149,3 +149,4 @@ set incsearch
 :hi clear IncSearch
 :hi Search term=reverse ctermfg=0 ctermbg=3 guifg=Black guibg=goldenrod1
 :hi IncSearch term=reverse ctermfg=0 ctermbg=11 guifg=Black guibg=goldenrod4
+noremap <C-K> :let @/=""<CR>
