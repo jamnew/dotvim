@@ -82,6 +82,13 @@ nmap <F8> :TagbarToggle<CR>
 " git submodule add https://github.com/vim-php/tagbar-phpctags.vim.git bundle/tagbar-phpctags.vim
 let g:tagbar_phpctags_bin = '/usr/local/bin/phpctags'
 
+" vim-plugin-for-drupal
+" Plugin is nested so we put in extra/ then symlink plugin to bundle/
+" mkdir extra
+" git submodule add https://git.drupalcode.org/project/vimrc.git extra/vimrc.git
+" cd bundle && ln -s ../extra/vimrc.git/bundle/vim-plugin-for-drupal vim-plugin-for-drupal
+" :helptags ~/.vim/bundle/vim-plugin-for-drupal/doc
+
 " %%% Personal config
 
 " file type plugin -- e.g. can add to ftplugin/php

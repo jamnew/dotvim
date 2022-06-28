@@ -22,3 +22,6 @@
 [submodule "bundle/vim-gutentags"]
 	path = bundle/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags.git
+[submodule "extra/vimrc.git"]
+	path = extra/vimrc.git
+	url = https://git.drupalcode.org/project/vimrc.git
