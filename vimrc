@@ -46,7 +46,7 @@ let g:airline_symbols.colnr = ':' " Removed from section z
 let g:airline_section_z = '%p%% %l:%c'
 
 " Fetch (jump to point in file)
-" git submodule add https://github.com/kopischke/vim-fetch.git bundle/vim-fetch
+" git submodule add https://github.com/wsdjeg/vim-fetch.git bundle/vim-fetch
 
 " %%$ Tags (mostly for PHP)
 
