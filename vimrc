@@ -157,3 +157,7 @@ set incsearch
 :hi Search term=reverse ctermfg=0 ctermbg=3 guifg=Black guibg=goldenrod1
 :hi IncSearch term=reverse ctermfg=0 ctermbg=11 guifg=Black guibg=goldenrod4
 noremap <C-K> :let @/=""<CR>
+
+" Macros
+" When saving macros re-enter ^[ by typing Ctrl-V ESC in insert mode
+let @a = 'mzf(%r]`zcf([' " Replace PHP array() with []
