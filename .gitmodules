@@ -25,3 +25,6 @@
 [submodule "bundle/vim-fetch"]
 	path = bundle/vim-fetch
 	url = https://github.com/wsdjeg/vim-fetch.git
+[submodule "bundle/linediff"]
+	path = bundle/linediff
+	url = https://github.com/AndrewRadev/linediff.vim

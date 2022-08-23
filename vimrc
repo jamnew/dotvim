@@ -89,6 +89,11 @@ let g:tagbar_phpctags_bin = '/usr/local/bin/phpctags'
 " cd bundle && ln -s ../extra/vimrc.git/bundle/vim-plugin-for-drupal vim-plugin-for-drupal
 " :helptags ~/.vim/bundle/vim-plugin-for-drupal/doc
 
+" linediff
+" git submodule add https://github.com/AndrewRadev/linediff.vim bundle/linediff
+noremap <C-N> :Linediff<CR><C-N>
+noremap <C-M> :LinediffReset<CR><C-M>
+
 " %%% Personal config
 
 " file type plugin -- e.g. can add to ftplugin/php
