@@ -94,6 +94,29 @@ let g:tagbar_phpctags_bin = '/usr/local/bin/phpctags'
 noremap <C-N> :Linediff<CR><C-N>
 noremap <C-M> :LinediffReset<CR><C-M>
 
+" vim-gitgutter
+" git submodule add https://github.com/airblade/vim-gitgutter.git bundle/vim-gitgutter
+" vim -u NONE -c "helptags bundle/vim-gitgutter/doc" -c q
+let mapleader = ","
+map <Leader>g :GitGutterToggle<CR>
+map <Leader>h :GitGutterLineHighlightsToggle<CR>
+map <Leader>v <Plug>(GitGutterPreviewHunk)
+map <Leader>c :only<CR>
+map <Leader><PageDown> <Plug>(GitGutterNextHunk)
+map <Leader><PageUp> <Plug>(GitGutterPrevHunk)
+" better symbols
+let g:gitgutter_sign_added = '++'
+let g:gitgutter_sign_modified = '~~'
+let g:gitgutter_sign_removed = '--'
+"let g:gitgutter_sign_removed_first_line = '‾‾'
+"let g:gitgutter_sign_removed_above_and_below = '_¯'
+"let g:gitgutter_sign_modified_removed = '~_'
+" better colours
+highlight GitGutterAdd    ctermbg=232 guibg=#080808 ctermfg=2 guifg=#009900
+highlight GitGutterChange ctermbg=232 guibg=#080808 ctermfg=3 guifg=#bbbb00
+highlight GitGutterDelete ctermbg=232 guibg=#080808 ctermfg=1 guifg=#ff2222
+highlight SignColumn      ctermbg=232 guibg=#080808
+
 " %%% Personal config
 
 " file type plugin -- e.g. can add to ftplugin/php
