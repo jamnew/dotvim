@@ -104,6 +104,8 @@ map <Leader>v <Plug>(GitGutterPreviewHunk)
 map <Leader>c :only<CR>
 map <Leader><PageDown> <Plug>(GitGutterNextHunk)
 map <Leader><PageUp> <Plug>(GitGutterPrevHunk)
+map <Leader><Insert> <Plug>(GitGutterStageHunk)
+map <Leader><Delete> <Plug>(GitGutterUndoHunk)
 " better symbols
 let g:gitgutter_sign_added = '++'
 let g:gitgutter_sign_modified = '~~'
