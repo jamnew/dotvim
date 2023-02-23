@@ -33,18 +33,18 @@ ctrl-k -- clear search highlight
 ## Deploy
 
 ```
-cd && git clone --recurse-submodules https://github.com/jamnew/dotvim.git .vim  
+cd && git clone --recurse-submodules https://github.com/jamnew/dotvim.git .vim
 ln -s .vim/vimrc .vimrc
 
 sudo apt install fonts-powerline
-sudo apt install automake pkg-config  
+sudo apt install automake pkg-config build-essential
 
-git clone https://github.com/universal-ctags/ctags.git  
-cd ctags  
-./autogen.sh  
-./configure  
-make  
-make install  
+git clone https://github.com/universal-ctags/ctags.git
+cd ctags
+./autogen.sh
+./configure
+make
+make install
 
 curl -Ss https://raw.githubusercontent.com/vim-php/phpctags/gh-pages/install/phpctags.phar > phpctags
 chmod +x phpctags
