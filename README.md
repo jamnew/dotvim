@@ -49,6 +49,8 @@ sudo make install
 curl -Ss https://raw.githubusercontent.com/vim-php/phpctags/gh-pages/install/phpctags.phar > phpctags
 chmod +x phpctags
 sudo mv phpctags /usr/local/bin/
+
+Note: to get tags for a php file, php needs to be installed.
 ```
 
 *Putty*
