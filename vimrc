@@ -127,6 +127,9 @@ filetype plugin indent on
 " show line numbers
 set number
 
+" Turn off wrapping
+set nowrap
+
 " indent with two spaces by default & auto indent
 set expandtab
 set tabstop=2
@@ -152,6 +155,7 @@ nnoremap <F4> :set cursorline! cursorcolumn!<CR>
 nnoremap <F2> :set number!<CR>
 nnoremap <F3> :set list!<CR>
 nnoremap <F5> :let &cc = &cc == '' ? '81' : ''<CR>
+nnoremap <F6> :set nowrap!<CR>
 
 " highlight trailing whitespace in red
 " have this highlighting not appear whilst you are typing in insert mode
