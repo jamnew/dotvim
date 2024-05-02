@@ -24,6 +24,11 @@ F2 -- toggle line numbers
 F3 -- toggle white space characters
 F4 -- toggle grey cursor line and col
 F5 -- toggle red 80 col red line
+F6 -- toggle text wrapping
+F7 -- toggle mouse support in all modes (a)
+F8 -- toggle mouse support in normal and visual modes (nv)
+
+F10 -- toggle paste mode
 
 ctrl-k -- clear search highlight
 

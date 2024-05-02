@@ -157,6 +157,22 @@ nnoremap <F3> :set list!<CR>
 nnoremap <F5> :let &cc = &cc == '' ? '81' : ''<CR>
 nnoremap <F6> :set nowrap!<CR>
 
+function! ToggleMouse(mode)
+  " check if mouse is enabled
+  if &mouse != ''
+    " disable mouse
+    set mouse=
+    echo ':set mouse='
+  else
+    " set mouse to the passed parameter mode
+    execute 'set mouse=' . a:mode
+    echo ':set mouse=' . a:mode
+  endif
+endfunc
+
+nnoremap <silent> <F7> <ESC>:call ToggleMouse('a')<CR>
+nnoremap <silent> <F8> <ESC>:call ToggleMouse('nv')<CR>
+
 " highlight trailing whitespace in red
 " have this highlighting not appear whilst you are typing in insert mode
 " have the highlighting of whitespace apply when you open new buffers
