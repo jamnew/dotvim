@@ -113,6 +113,7 @@ let g:gitgutter_sign_removed = '--'
 "let g:gitgutter_sign_removed_first_line = '‾‾'
 "let g:gitgutter_sign_removed_above_and_below = '_¯'
 "let g:gitgutter_sign_modified_removed = '~_'
+let g:gitgutter_max_signs = 2000
 " better colours
 highlight GitGutterAdd    ctermbg=232 guibg=#080808 ctermfg=2 guifg=#009900
 highlight GitGutterChange ctermbg=232 guibg=#080808 ctermfg=3 guifg=#bbbb00
