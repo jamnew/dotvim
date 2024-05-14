@@ -12,7 +12,7 @@
 , h toggle line highlights
 , v preview hunk
 
-F8 -- view tags
+F9 -- view tags
 ctrl-w-w -- swap panes
 enter -- jump to code for selected tag
 p -- jump to code for selected tag but stay on tag pane

@@ -76,7 +76,7 @@ let g:tagbar_width = max([80, winwidth(0) / 3])
 let g:tagbar_sort = 0 " Source file order
 let g:tagbar_compact = 1
 let g:tagbar_show_linenumbers = 1 " Absolute
-nmap <F8> :TagbarToggle<CR>
+nmap <F9> :TagbarToggle<CR>
 
 " tagbar-phpctags
 " git submodule add https://github.com/vim-php/tagbar-phpctags.vim.git bundle/tagbar-phpctags.vim
