@@ -37,6 +37,22 @@ ctrl-k -- clear search highlight
 
 ## Deploy
 
+## macOS
+
+```
+brew install vim
+
+cd && git clone --recurse-submodules https://github.com/jamnew/dotvim.git .vim
+
+brew install ctags
+
+cd .vim/bundle/tagbar-phpctags.vim
+curl -Ss https://raw.githubusercontent.com/vim-php/phpctags/gh-pages/install/phpctags.phar > phpctags
+chmod +x phpctags
+```
+
+## Linux
+
 ```
 cd && git clone --recurse-submodules https://github.com/jamnew/dotvim.git .vim
 ln -s .vim/vimrc .vimrc
