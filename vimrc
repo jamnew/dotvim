@@ -210,5 +210,18 @@ set incsearch
 noremap <C-K> :let @/=""<CR>
 
 " Macros
+"
 " When saving macros re-enter ^[ by typing Ctrl-V ESC in insert mode
-let @a = 'mzf(%r]`zcf([' " Replace PHP array() with []
+"
+" Replace PHP array() with []
+let @a = 'mzf(%r]`zcf(['
+"
+" Convert PHP variable name to array element
+" -- start in normal mode with cursor on first char
+" -- ends in normal mode with cursor in same position (T$)
+let @b = "diwi\data['\<Esc>pa']\<Esc>T$"
+" Convert PHP array element to variable name
+" -- start in normal mode with cursor on first char
+" -- ends in normal mode with cursor in same position (T$)
+" -- uses register a
+let @c = "f'l\"adiwT$df]\"aPT$"
