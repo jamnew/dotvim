@@ -131,6 +131,9 @@ set number
 " Turn off wrapping
 set nowrap
 
+" Not set by default on macOS!
+backspace=indent,eol,start
+
 " indent with two spaces by default & auto indent
 set expandtab
 set tabstop=2
