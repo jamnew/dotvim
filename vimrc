@@ -233,4 +233,4 @@ let @c = "f'l\"adiwT$df]\"aPT$"
 " -- start in normal mode with cursor on first char of key
 " -- assumes one element per line format
 " -- assumes element lines always end with comma including last element
-let @d = "\"ay/ =><CR>d/ =><CR>d4 \"byt,d$a<C-r>b => <C-r>a,<Esc>"
+let @d = "\"ay/ =>\rd/ =>\rd4 \"byt,d$a\<C-r>b => \<C-r>a,\<Esc>"
