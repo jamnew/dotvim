@@ -71,16 +71,16 @@ let g:gutentags_cache_dir = '~/.vim/gutentags'
 " Tagbar (tag viewer)
 " git submodule add https://github.com/preservim/tagbar.git bundle/tagbar
 " let g:tagbar_ctags_bin = '/usr/local/bin/phpctags'
-let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
-let g:tagbar_width = max([80, winwidth(0) / 3])
+" let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+" let g:tagbar_width = max([80, winwidth(0) / 3])
 let g:tagbar_sort = 0 " Source file order
-let g:tagbar_compact = 1
-let g:tagbar_show_linenumbers = 1 " Absolute
+" let g:tagbar_compact = 1
+" let g:tagbar_show_linenumbers = 1 " Absolute
 nmap <F9> :TagbarToggle<CR>
 
 " tagbar-phpctags
 " git submodule add https://github.com/vim-php/tagbar-phpctags.vim.git bundle/tagbar-phpctags.vim
-let g:tagbar_phpctags_bin = '/usr/local/bin/phpctags'
+" let g:tagbar_phpctags_bin = '/usr/local/bin/phpctags'
 
 " vim-plugin-for-drupal
 " Plugin is nested so we put in extra/ then symlink plugin to bundle/
@@ -228,3 +228,9 @@ let @b = "diwi\data['\<Esc>pa']\<Esc>T$"
 " -- ends in normal mode with cursor in same position (T$)
 " -- uses register a
 let @c = "f'l\"adiwT$df]\"aPT$"
+"
+" Swap PHP key and value
+" -- start in normal mode with cursor on first char of key
+" -- assumes one element per line format
+" -- assumes element lines always end with comma including last element
+let @d = "\"ay/ =><CR>d/ =><CR>d4 \"byt,d$a<C-r>b => <C-r>a,<Esc>"
