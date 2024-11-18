@@ -73,8 +73,11 @@ let g:gutentags_cache_dir = '~/.vim/gutentags'
 " let g:tagbar_ctags_bin = '/usr/local/bin/phpctags'
 " let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 " let g:tagbar_width = max([80, winwidth(0) / 3])
+let g:tagbar_width = 60
 let g:tagbar_sort = 0 " Source file order
-" let g:tagbar_compact = 1
+let g:tagbar_compact = 1
+let g:tagbar_autoclose = 1
+let g:tagbar_autofocus = 1
 " let g:tagbar_show_linenumbers = 1 " Absolute
 nmap <F9> :TagbarToggle<CR>
 
@@ -192,9 +195,11 @@ if &diff
   " cycle diffs and center change to middle of screen (z.)
   noremap <PageDown> ]cz.
   noremap <PageUp> [cz.
-  " diff obtain & diff put
+  " diff obtain (:diffget) & diff put (:diffput)
   noremap { do
   noremap } dp
+  " diff put from left buffer to two right buffers -- leader is ,
+  noremap <leader>} :execute "diffput 2" \| execute "diffput 3"<CR>
   " Control-L to refresh screen & diffs
   noremap <C-L> :diffupdate<CR><C-L>
 endif
@@ -211,6 +216,20 @@ set incsearch
 :hi Search term=reverse ctermfg=0 ctermbg=3 guifg=Black guibg=goldenrod1
 :hi IncSearch term=reverse ctermfg=0 ctermbg=11 guifg=Black guibg=goldenrod4
 noremap <C-K> :let @/=""<CR>
+
+" Term tab switch
+" Change terminal window key from C-w -- align to our leader key
+set termwinkey=,
+" Map term in new tab -- from normal mode
+nnoremap <Leader>t :tabnew<CR>:term ++curwin<CR>
+" Map term in new tab -- from terminal mode
+tnoremap ,t ,:tabnew<CR>:term ++curwin<CR>
+" Map normal mode tab switching -- align with terminal mode
+nnoremap <Leader><Right> gt
+nnoremap <Leader><Left> gT
+" Map terminal mode tab switching -- align with normal mode
+tnoremap ,<Right> ,gt
+tnoremap ,<Left> ,gT
 
 " Macros
 "
