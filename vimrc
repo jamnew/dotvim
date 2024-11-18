@@ -12,10 +12,17 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_enable_highlighting = 1
 
-" Airline (status line)
+" Airline (status/tab line) -- see bundle/vim-airline/doc/airline.txt
 " git submodule add https://github.com/vim-airline/vim-airline bundle/vim-airline
 " git submodule add https://github.com/vim-airline/vim-airline-themes bundle/vim-airline-themes
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#show_close_button = 0
+" See bundle/vim-airline/autoload/airline/extensions/tabline/formatters
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+" Removed ! from this so terminals show properly as inactive buffers
+let g:airline#extensions#tabline#ignore_bufadd_pat = 'defx|gundo|nerd_tree|startify|tagbar|term://|undotree|vimfiler'
 let g:airline_powerline_fonts = 1 " sudo apt-get install fonts-powerline
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
