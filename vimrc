@@ -1,20 +1,61 @@
 " %%% Plugin config
 
-" Pathogen -- loaded non-default instead of autoload/pathogen.vim
-" git submodule add https://github.com/tpope/vim-pathogen.git bundle/vim-pathogen
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
+" vim-plug
+"
+" -- Install (writes to .vim/plugged)
+"
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"
+" :source ~/.vimrc
+" :PlugInstall
+"
+" -- Install plugin
+" Add below then run :PlugInstall
+"
+" -- Upgrade vim-plug and remove plugins
+"
+" :PlugUpgrade
+" :PlugClean
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'AndrewRadev/linediff.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'preservim/tagbar'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'wsdjeg/vim-fetch' " Jump to point in file on load with :XX
+Plug 'airblade/vim-gitgutter'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'ojroques/vim-oscyank'
+Plug 'kshenoy/vim-signature'
+Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
+Plug 'vim-php/tagbar-phpctags.vim'
+
+call plug#end()
+
+" Must mapleader before using <Leader>
+let mapleader = ","
+
+" phpactor
+" Needs composer
+" php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+" php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+" php -r "unlink('composer-setup.php');"
+
+" vim-oscyank (copy to macos clipboard)
+nmap <Leader>f <Plug>OSCYankOperator
+nmap <Leader>ff <Leader>f_
+vmap <Leader>f <Plug>OSCYankVisual
 
 " Syntastic (syntax checker)
-" git submodule add https://github.com/vim-syntastic/syntastic.git bundle/syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_enable_highlighting = 1
 
 " Airline (status/tab line) -- see bundle/vim-airline/doc/airline.txt
-" git submodule add https://github.com/vim-airline/vim-airline bundle/vim-airline
-" git submodule add https://github.com/vim-airline/vim-airline-themes bundle/vim-airline-themes
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#show_tab_nr = 0
@@ -52,9 +93,6 @@ let g:airline_symbols.colnr = ':' " Removed from section z
 " custom section z
 let g:airline_section_z = '%p%% %l:%c'
 
-" Fetch (jump to point in file)
-" git submodule add https://github.com/wsdjeg/vim-fetch.git bundle/vim-fetch
-
 " %%$ Tags (mostly for PHP)
 
 " universal ctags install
@@ -71,44 +109,27 @@ let g:airline_section_z = '%p%% %l:%c'
 " sudo mv phpctags /usr/local/bin/
 
 " Gutentags (tags magic)
-" git submodule add https://github.com/ludovicchabant/vim-gutentags.git bundle/vim-gutentags
 let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.js']
 let g:gutentags_cache_dir = '~/.vim/gutentags'
 
 " Tagbar (tag viewer)
-" git submodule add https://github.com/preservim/tagbar.git bundle/tagbar
 " Tagbar uses folding so za to toggle, zc to close, zo to open
-" let g:tagbar_ctags_bin = '/usr/local/bin/phpctags'
-" let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
-" let g:tagbar_width = max([80, winwidth(0) / 3])
 let g:tagbar_width = 60
 let g:tagbar_sort = 0 " Source file order
 let g:tagbar_compact = 1
 let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
-" let g:tagbar_show_linenumbers = 1 " Absolute
 nmap <F9> :TagbarToggle<CR>
 
 " tagbar-phpctags
-" git submodule add https://github.com/vim-php/tagbar-phpctags.vim.git bundle/tagbar-phpctags.vim
-" let g:tagbar_phpctags_bin = '/usr/local/bin/phpctags'
-
-" vim-plugin-for-drupal
-" Plugin is nested so we put in extra/ then symlink plugin to bundle/
-" mkdir extra
-" git submodule add https://git.drupalcode.org/project/vimrc.git extra/vimrc.git
-" cd bundle && ln -s ../extra/vimrc.git/bundle/vim-plugin-for-drupal vim-plugin-for-drupal
-" :helptags ~/.vim/bundle/vim-plugin-for-drupal/doc
+let g:tagbar_phpctags_bin = '/usr/local/bin/phpctags'
+let g:tagbar_phpctags_memory_limit = '512M'
 
 " linediff
-" git submodule add https://github.com/AndrewRadev/linediff.vim bundle/linediff
 noremap <C-N> :Linediff<CR><C-N>
 noremap <C-M> :LinediffReset<CR><C-M>
 
 " vim-gitgutter
-" git submodule add https://github.com/airblade/vim-gitgutter.git bundle/vim-gitgutter
-" vim -u NONE -c "helptags bundle/vim-gitgutter/doc" -c q
-let mapleader = ","
 map <Leader>g :GitGutterToggle<CR>
 map <Leader>h :GitGutterLineHighlightsToggle<CR>
 map <Leader>v <Plug>(GitGutterPreviewHunk)
@@ -121,9 +142,6 @@ map <Leader><Delete> <Plug>(GitGutterUndoHunk)
 let g:gitgutter_sign_added = '++'
 let g:gitgutter_sign_modified = '~~'
 let g:gitgutter_sign_removed = '--'
-"let g:gitgutter_sign_removed_first_line = '‾‾'
-"let g:gitgutter_sign_removed_above_and_below = '_¯'
-"let g:gitgutter_sign_modified_removed = '~_'
 let g:gitgutter_max_signs = 2000
 " better colours
 highlight GitGutterAdd    ctermbg=232 guibg=#080808 ctermfg=2 guifg=#009900
