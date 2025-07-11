@@ -130,14 +130,12 @@ noremap <C-N> :Linediff<CR><C-N>
 noremap <C-M> :LinediffReset<CR><C-M>
 
 " vim-gitgutter
-map <Leader>g :GitGutterToggle<CR>
-map <Leader>h :GitGutterLineHighlightsToggle<CR>
+map <Leader>g :GitGutterLineHighlightsToggle<CR>
 map <Leader>v <Plug>(GitGutterPreviewHunk)
-map <Leader>c :only<CR>
-map <Leader><PageDown> <Plug>(GitGutterNextHunk)
-map <Leader><PageUp> <Plug>(GitGutterPrevHunk)
-map <Leader><Insert> <Plug>(GitGutterStageHunk)
-map <Leader><Delete> <Plug>(GitGutterUndoHunk)
+map <Leader><Down> <Plug>(GitGutterNextHunk)
+map <Leader><Up> <Plug>(GitGutterPrevHunk)
+map <Leader>i <Plug>(GitGutterStageHunk)
+map <Leader>d <Plug>(GitGutterUndoHunk)
 " better symbols
 let g:gitgutter_sign_added = '++'
 let g:gitgutter_sign_modified = '~~'
@@ -246,14 +244,14 @@ autocmd BufWinLeave * call clearmatches()
 
 " setup better keybinds for vimdiff
 if &diff
-  " cycle diffs and center change to middle of screen (z.)
-  noremap <PageDown> ]cz.
-  noremap <PageUp> [cz.
+  " cycle diffs and center change to middle of screen (z.) -- \ next & | previous
+  noremap \ ]cz.
+  noremap | [cz.
   " diff obtain (:diffget) & diff put (:diffput)
   noremap { do
   noremap } dp
   " diff put from left buffer to two right buffers -- leader is ,
-  noremap <leader>} :execute "diffput 2" \| execute "diffput 3"<CR>
+  noremap <Leader>} :execute "diffput 2" \| execute "diffput 3"<CR>
   " Control-L to refresh screen & diffs
   noremap <C-L> :diffupdate<CR><C-L>
 endif
