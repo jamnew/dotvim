@@ -271,17 +271,23 @@ noremap <C-K> :let @/=""<CR>
 
 " Term tab switch
 " Change terminal window key from C-w -- align to our leader key
-set termwinkey=,
+"set termwinkey=,
 " Map term in new tab -- from normal mode
 nnoremap <Leader>t :tabnew<CR>:term ++curwin<CR>
 " Map term in new tab -- from terminal mode
-tnoremap ,t ,:tabnew<CR>:term ++curwin<CR>
+"tnoremap ,t ,:tabnew<CR>:term ++curwin<CR>
 " Map normal mode tab switching -- align with terminal mode
 nnoremap <Leader><Right> gt
 nnoremap <Leader><Left> gT
 " Map terminal mode tab switching -- align with normal mode
-tnoremap ,<Right> ,gt
-tnoremap ,<Left> ,gT
+"tnoremap ,<Right> ,gt
+"tnoremap ,<Left> ,gT
+
+nnoremap [1;4C gt
+nnoremap [1;4D gT
+
+tnoremap [1;4C <C-w>gt
+tnoremap [1;4D <C-w>gT
 
 " Macros
 "
