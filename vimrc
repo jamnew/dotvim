@@ -246,7 +246,7 @@ autocmd BufWinLeave * call clearmatches()
 if &diff
   " cycle diffs and center change to middle of screen (z.) -- \ next & | previous
   noremap \ ]cz.
-  noremap | [cz.
+  noremap <Bar> [cz.
   " diff obtain (:diffget) & diff put (:diffput)
   noremap { do
   noremap } dp
