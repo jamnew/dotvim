@@ -3,10 +3,10 @@
 ## Keys
 
 ```
-, pagedown -- next diff
-, pageup -- next diff
-, insert -- stage hunk
-, del -- undo hunk
+, down-arrow -- next diff
+, up-arrow -- next diff
+, i -- stage hunk
+, d -- undo hunk
 
 , g toggle gitgutter
 , h toggle line highlights
